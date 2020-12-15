@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: MyString
+  nthu_course: one
+  nthu_student: one
+  from_token: false
+
+two:
+  score: MyString
+  nthu_course: two
+  nthu_student: two
+  from_token: false

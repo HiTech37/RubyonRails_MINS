@@ -1,0 +1,2 @@
+module NthuEnrollmentHelper
+end

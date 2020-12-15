@@ -1,0 +1,2 @@
+module NthuCourseHelper
+end

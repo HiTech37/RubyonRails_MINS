@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MINS is Not ScoreSharing</title>
+   </head>
+   <body>
+      <h1>Entropy</h1>
+      <h1>Entropy 使用說明 Guide</h1>
+      <h2>Step 0: <a href="https://chrome.google.com/webstore/detail/nthuscoresharing/fbbgchnopppgncdjbckkjehfchncghdf?hl=zh-TW" target="_blank">安裝 Chrome 插件</a></h2>
+      <h2>Step 1: 選擇學校 Choose your university</h2>
+      <select name="選擇大學" id="university">
+         <option value="Select">選擇大學</option>
+         <option value="國立台灣大學">國立台灣大學</option>
+         <option value="國立清華大學">國立清華大學</option>
+      </select>
+      <h2>Step 2: 註冊成績 Register your transcript</h2>
+      <p> 在使用我們服務的同時，代表你同意我們的使用者條款與隱私權政策，請注意讓插件掃描到成績單 </p>
+      <a href="https://ifsel3.aca.ntu.edu.tw/hissco/index.asp" target="_blank">Hyperlink to transcript</a>
+      <h2>Step 3: 查看大家分享的成績 Enjoy the ScoreSharing community</h2>
+      <a href="https://nol.ntu.edu.tw/nol/guest/index.php" target="_blank">Browse course with Entropy!</a>
+      <h2> NTU 已經有 <%= @ntu_student_count %> 人註冊了成績單，<%= @ntu_course_count %> 筆課程資料，<%= @ntu_enrollment_count %> 筆成績資料</h2>
+      <h2> NTHU 已經有 <%= @nthu_student_count %> 人註冊了成績單，<%= @nthu_course_count %> 筆課程資料，<%= @nthu_enrollment_count %> 筆成績資料</h2> 
+      <% if not @student.nil? %>
+				<p> You are loggin as <%= @student %> </p>
+			<% end %>
+      <h2>
+         如果你想看特定課程的成績分布，可以將連結分享給修該課程的學生
+      </h2>
+      <h3>
+         特別感謝
+      </h3>
+      <p> 感謝台大新創法律策略顧問社在發想階段提供相關法律問題的研究與討論 </p>
+   </body>
+</html>
+
