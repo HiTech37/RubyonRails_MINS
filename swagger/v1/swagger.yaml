@@ -1,0 +1,131 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/courses":
+    get:
+      summary: Student Enrollments
+      tags:
+      - Courses
+      parameters:
+      - name: string
+        in: query
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+          required:
+          - token
+      responses:
+        '200':
+          description: Enrollment
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+  "/api/v1/enrollments":
+    get:
+      summary: Student Enrollments
+      tags:
+      - Enrollments
+      parameters:
+      - name: string
+        in: query
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+          required:
+          - token
+      responses:
+        '200':
+          description: Enrollment
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+  "/api/v1/universities":
+    get:
+      summary: University List
+      tags:
+      - Universities
+      responses:
+        '200':
+          description: " "
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+  "/api/v1/sessions":
+    post:
+      summary: Login
+      tags:
+      - Student Authentication
+      parameters: []
+      responses:
+        '200':
+          description: " "
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/v1/users":
+    post:
+      summary: Register
+      tags:
+      - Student Authentication
+      parameters: []
+      responses:
+        '200':
+          description: Created a User
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    first_name:
+                      type: string
+                    last_name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    number:
+                      type: string
+                    university_id:
+                      type: integer
+                  required:
+                  - email
+                  - password
+                  - university_id
+servers:
+- url: http://localhost:3000
+  variables:
+    defaultHost:
+      default: localhost:3000

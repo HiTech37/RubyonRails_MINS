@@ -13,6 +13,13 @@ gem 'bootsnap', '1.4.5', require: false
 gem 'pg', '1.2.3'
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'devise'
+gem 'rolify'
+gem 'rswag'
+
+
+
+
 group :development, :test do
   gem 'byebug', '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails"

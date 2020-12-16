@@ -1,7 +1,10 @@
 class Api::V1::EnrollmentsController < ApplicationController
 
-    def index 
+    before_action :user_authorized 
+    
 
+    def index 
+        @enrollments = current_user.enrollments.all
     end
 
     def ntu 

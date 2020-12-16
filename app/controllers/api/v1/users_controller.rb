@@ -1,9 +1,5 @@
 class Api::V1::UsersController < ApplicationController
 
-    # Get All the System Users
-    def index 
-        @user = User.all 
-    end 
 
     # Register a new user
     def create 
@@ -11,7 +7,8 @@ class Api::V1::UsersController < ApplicationController
         if @user.blank?
             @user = User.new(user_params) 
             if @user.save
-
+                @user.add_role :student
+                sign_in :user, @user   
             else
                 render json: {error: @user.errors.first}
             end
@@ -24,6 +21,6 @@ class Api::V1::UsersController < ApplicationController
     private 
     # Setting a new user params
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :number, :university_id)
     end
 end

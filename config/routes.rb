@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+  devise_for :users
   # Start: Version V1 Routes 
   namespace :api, defaults: { format: :json } do 
     namespace :v1 do 
+      resources :universities, only: [:index]
       resources :users , only: [:index, :create] 
       resources :sessions, only: [:create] 
       resources :courses, only: [:index] do 
