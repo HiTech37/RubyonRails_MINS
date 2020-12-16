@@ -10,14 +10,34 @@
     end
  end
 
-    university = ["nthu", "ntu"]
+ # Create University 
+ university = ["nthu", "ntu"]
     university.each do |uni|
        al =  University.find_by_name(uni)
        if al.blank?
-        puts"ssssssssssssssssssssssssssssss "
             University.create(name: uni)
        end
-    end
+end
+
+ntu = University.find_by_name('ntu')
+if ntu
+   user = User.renew("R082411011122", ntu)
+   if user
+      Enrollment.renew(course_number: "10820Ocean7001", score: "A-", credit: 1, title: "專題討論一", university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean7012", score: "A-", credit: 1, title: "專題討論一",university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean7166", score: "B+", credit: 2, title: "實測資料分析實習",university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean5001", score: "A+", credit: 1, title: "海洋地質概論", university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean5037", score: "A", credit: 1, title: "物理海洋概論", university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean5039", score: "B+", credit: 2, title: "物理海洋學", university_id: ntu.try(:id), user_id: user.try(:id))
+   end
+end
+
+nthu = University.find_by_name('nthu')
+if nthu
+
+end
+
+
 
 
 
