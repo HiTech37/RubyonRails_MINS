@@ -7,6 +7,7 @@ class Enrollment < ApplicationRecord
     belongs_to :user 
 
 
+    # Start:  Add new enrollment 
     def self.renew(params)
 
         course =  Course.find_or_create_by!(
@@ -23,5 +24,6 @@ class Enrollment < ApplicationRecord
         enrollment.update!(score: params[:score], rank: params[:rank].to_i)
         enrollment
     end
+    # End:  Add new enrollment 
 
 end

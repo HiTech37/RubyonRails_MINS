@@ -98,7 +98,6 @@ RSpec.describe "Api::V1::Enrollments", type: :request do
                         enrollment:{
                                     type: :object,
                                     properties: {
-                                        course_number: { type: :string },
                                         score: { type: :string },
                                         credit: { type: :integer },
                                         title: { type: :string }
