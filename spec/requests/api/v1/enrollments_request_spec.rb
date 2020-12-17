@@ -102,9 +102,7 @@ RSpec.describe "Api::V1::Enrollments", type: :request do
                                         credit: { type: :integer },
                                         from_token: { type: :string }
                                     },
-                                    required: ["score", "credit"],
                             }
-                           
                     }   
             }
     
@@ -127,7 +125,7 @@ RSpec.describe "Api::V1::Enrollments", type: :request do
     # Start: Show Enrollement 
 
     path  "/api/v1/enrollments/{id}" do 
-        put "Show Enrollement" do
+        get "Show Enrollement" do
             tags "Enrollments"
             consumes "application/json"
                         parameter name: :id, in: :path, type: :integer, required: true, description: 'Enrollement ID'

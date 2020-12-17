@@ -93,6 +93,48 @@ paths:
                   - title
   "/api/v1/enrollments/{id}":
     put:
+      summary: Update Enrollments
+      tags:
+      - Enrollments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Enrollement ID
+        schema:
+          type: integer
+      - name: string
+        in: query
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+          required:
+          - token
+      responses:
+        '200':
+          description: Enrollment
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enrollment:
+                  type: object
+                  properties:
+                    score:
+                      type: string
+                    credit:
+                      type: integer
+                    from_token:
+                      type: string
+    get:
       summary: Show Enrollement
       tags:
       - Enrollments
