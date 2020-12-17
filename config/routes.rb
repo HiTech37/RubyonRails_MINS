@@ -9,19 +9,8 @@ Rails.application.routes.draw do
       resources :universities, only: [:index]
       resources :users , only: [:index, :create] 
       resources :sessions, only: [:create] 
-      resources :courses, only: [:index] do 
-          collection do 
-            get :ntu
-            get :nthu 
-          end
-      end
-      resources :enrollments, only: [:index] do 
-          collection do 
-            get :ntu
-            get :nthu 
-          end
-      end
-
+      resources :courses, only: [:index] 
+      resources :enrollments
     end
   end  
   # End: Version V1 Routes 

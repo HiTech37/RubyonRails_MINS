@@ -23,7 +23,11 @@ ntu = University.find_by_name('ntu')
 if ntu
    user = User.renew("R082411011122", ntu)
    if user
-      Enrollment.renew(course_number: "10820Ocean7001", score: "A-", credit: 1, title: "專題討論一", university_id: ntu.try(:id), user_id: user.try(:id))
+      Enrollment.renew(course_number: "10820Ocean7001", 
+         score: "A-", 
+         credit: 1, title: "專題討論一", 
+         university_id: ntu.try(:id), 
+         user_id: user.try(:id))
       Enrollment.renew(course_number: "10820Ocean7012", score: "A-", credit: 1, title: "專題討論一",university_id: ntu.try(:id), user_id: user.try(:id))
       Enrollment.renew(course_number: "10820Ocean7166", score: "B+", credit: 2, title: "實測資料分析實習",university_id: ntu.try(:id), user_id: user.try(:id))
       Enrollment.renew(course_number: "10820Ocean5001", score: "A+", credit: 1, title: "海洋地質概論", university_id: ntu.try(:id), user_id: user.try(:id))

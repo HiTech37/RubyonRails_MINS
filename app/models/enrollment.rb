@@ -21,7 +21,7 @@ class Enrollment < ApplicationRecord
        
         enrollment = self.find_or_create_by(course_id: course.id, user_id: params[:user_id])
         enrollment.update!(score: params[:score], rank: params[:rank].to_i)
-        puts"ssssssssssssssSS", enrollment.inspect
+        enrollment
     end
 
 end
